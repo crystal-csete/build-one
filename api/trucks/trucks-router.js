@@ -33,7 +33,7 @@ router.post('/', (req, res, next) => { // { name }
 router.delete('/:id', (req, res, next) => {
   Trucks.remove(req.params.id)
     .then(count => {
-      res.status(200).json({ message: 'The hub has been nuked', count });
+      res.status(200).json({ message: 'The truck has been deleted!', count });
     })
     .catch(next);
 });
@@ -46,7 +46,7 @@ router.put('/:id', (req, res) => {
     .catch(error => {
       console.log(error);
       res.status(500).json({
-        message: 'Error updating the hub',
+        message: 'Error updating the truck!',
       });
     });
 });
@@ -57,7 +57,7 @@ router.put('/:id', (req, res) => {
 // eslint-disable-next-line no-unused-vars
 router.use((error, req, res, next) => {
   res.status(500).json({
-    info: 'something horrible happened inside the hubs router',
+    info: 'Something horrible happened inside the trucks router!',
     message: error.message,
     stack: error.stack,
   })

@@ -1,8 +1,7 @@
-require("dotenv").config();
+const knex = require("knex")
 
-const knex = require("knex")("production");
+const config = require("../knexfile")
 
-const knexfile = require("../knexfile.js");
-const environment = process.env.NODE_ENV || "production";
+const env = process.env.NODE_ENV || "development"
 
-module.exports = knex(knexfile[environment]);
+module.exports = knex(config[env])
