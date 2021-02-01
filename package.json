@@ -8,9 +8,8 @@
     "dev": "nodemon index.js",
     "migrate": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
-    "migrateh": "heroku run knex migrate:latest -a quizmaster-prototype",
-    "rollbackh": "heroku run knex migrate:rollback -a quizmaster-prototype",
-    "heroku-postbuild": "cd client && npm i && npm run build",
+    "migrateh": "heroku run knex migrate:latest -a build-one",
+    "rollbackh": "heroku run knex migrate:rollback -a build-one",
     "seed": "knex seed:run"
   },
   "engines": {
